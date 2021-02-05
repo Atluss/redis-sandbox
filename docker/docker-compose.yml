@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+
+  redis:
+    container_name: cn_redis
+    build:
+      context: ./dockerfile
+      dockerfile: Dockerfile
+      args:
+        - container_name=redis_test
+    ports:
+      - "6379:6379"
+    expose:
+      - "6379"
